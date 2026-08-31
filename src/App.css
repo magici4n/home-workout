@@ -1,0 +1,1041 @@
+.app {
+  width: 100%;
+  max-width: 520px;
+
+  margin: 0 auto;
+
+  padding: 24px 16px 60px;
+}
+
+/* 헤더 */
+
+.header {
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 4px 0 6px;
+
+  font-size: 32px;
+}
+
+.subtitle,
+.label {
+  margin: 0;
+
+  color: #4d8d68;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+}
+
+.date {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+/* 카드 */
+
+.card {
+  margin-bottom: 16px;
+
+  padding: 20px;
+
+  border: 1px solid #e6e8eb;
+  border-radius: 20px;
+
+  background: white;
+}
+
+.card h2 {
+  margin: 0 0 16px;
+
+  font-size: 20px;
+}
+
+/* 운동 선택 */
+
+.exercise-list {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 10px;
+}
+
+.exercise-button {
+  min-height: 50px;
+
+  padding: 10px;
+
+  border: 1px solid #e0e3e6;
+  border-radius: 14px;
+
+  background: white;
+
+  color: #333;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.exercise-button.active {
+  border-color: #4d8d68;
+
+  background: #eaf5ee;
+
+  color: #32704d;
+}
+
+/* 운동 */
+
+.workout-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+.workout-header h2 {
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.set-progress {
+  color: #397b57;
+
+  font-size: 15px;
+}
+
+/* 목표 설정 */
+
+.goal-box {
+  padding: 16px;
+
+  border-radius: 16px;
+
+  background: #f6f7f7;
+}
+
+.goal-title {
+  margin: 0 0 12px;
+
+  color: #777;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.setting-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 52px;
+}
+
+.setting-row + .setting-row {
+  border-top: 1px solid #e7e7e7;
+}
+
+.setting-row > span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* +/- 조절 버튼 */
+
+.stepper {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.stepper button,
+.current-reps-control button {
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #dde1e3;
+  border-radius: 12px;
+
+  background: white;
+
+  color: #333;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+.stepper strong {
+  min-width: 56px;
+
+  text-align: center;
+}
+
+/* 진행률 */
+
+.progress-area {
+  margin: 22px 0;
+}
+
+.progress-text {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+
+  color: #777;
+
+  font-size: 13px;
+}
+
+.progress-text strong {
+  color: #397b57;
+}
+
+.progress-bar {
+  height: 9px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #edf0ee;
+}
+
+.progress-value {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #4d8d68;
+
+  transition: width 0.25s ease;
+}
+
+/* 현재 세트 */
+
+.current-set {
+  padding: 22px 0;
+
+  text-align: center;
+}
+
+.current-set > p {
+  margin: 0 0 14px;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+.current-reps-control {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 28px;
+}
+
+.current-reps-control > div {
+  min-width: 100px;
+}
+
+.current-reps-control strong {
+  font-size: 54px;
+  line-height: 1;
+}
+
+.current-reps-control span {
+  margin-left: 4px;
+
+  color: #777;
+}
+
+/* 세트 완료 */
+
+.complete-button {
+  width: 100%;
+
+  min-height: 64px;
+
+  border: none;
+  border-radius: 16px;
+
+  background: #397b57;
+
+  color: white;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.complete-button:active {
+  transform: scale(0.98);
+}
+
+/* 운동 완료 */
+
+.completed-box {
+  margin-top: 20px;
+
+  padding: 24px;
+
+  border-radius: 16px;
+
+  background: #eaf5ee;
+
+  text-align: center;
+}
+
+.completed-box strong {
+  color: #32704d;
+
+  font-size: 20px;
+}
+
+.completed-box p {
+  margin: 8px 0 0;
+
+  color: #5d7566;
+
+  font-size: 14px;
+}
+
+/* 운동 초기화 */
+
+.reset-exercise-button {
+  width: 100%;
+
+  margin-top: 14px;
+
+  padding: 10px;
+
+  border: none;
+
+  background: none;
+
+  color: #999;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+/* 기록 */
+
+.record-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.record-header h2 {
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.record-header > strong {
+  color: #397b57;
+}
+
+.empty-message {
+  margin: 15px 0 0;
+
+  padding: 28px 0;
+
+  color: #999;
+
+  text-align: center;
+}
+
+.summary-list {
+  margin-top: 18px;
+}
+
+.summary-item {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 68px;
+
+  border-bottom: 1px solid #eee;
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-item strong {
+  font-size: 15px;
+}
+
+.summary-item p {
+  margin: 5px 0 0;
+
+  color: #777;
+
+  font-size: 13px;
+}
+
+.summary-item > span {
+  color: #397b57;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.reset-today-button {
+  width: 100%;
+
+  margin-top: 20px;
+
+  padding: 12px;
+
+  border: none;
+
+  background: none;
+
+  color: #b65353;
+
+  cursor: pointer;
+}
+
+/* 공통 버튼 */
+
+button {
+  font-family: inherit;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(77, 141, 104, 0.25);
+
+  outline-offset: 2px;
+}
+
+/* 기본 루틴 */
+
+.routine-header,
+.extra-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 16px;
+}
+
+.routine-header h2,
+.extra-header h2 {
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.routine-progress {
+  color: #397b57;
+
+  font-size: 14px;
+}
+
+.basic-routine-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.routine-button {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  min-height: 68px;
+
+  padding: 12px 14px;
+
+  border: 1px solid #e0e3e6;
+  border-radius: 15px;
+
+  background: white;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.routine-button.active {
+  border-color: #4d8d68;
+
+  background: #eaf5ee;
+}
+
+.routine-button > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.routine-button strong {
+  color: #222;
+
+  font-size: 16px;
+}
+
+.routine-button > div > span {
+  color: #888;
+
+  font-size: 12px;
+}
+
+.routine-status {
+  color: #777;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.routine-status.completed {
+  color: #397b57;
+}
+
+/* -------------------------
+   추가 운동 접기 / 펼치기
+-------------------------- */
+
+.extra-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.extra-toggle-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  min-height: 72px;
+
+  padding: 18px 20px;
+
+  border: none;
+
+  background: white;
+
+  color: #222;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.extra-toggle-button > div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.extra-toggle-button strong {
+  font-size: 18px;
+}
+
+.extra-toggle-button > span {
+  color: #777;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.extra-content {
+  padding: 0 20px 20px;
+
+  border-top: 1px solid #eeeeee;
+}
+
+.extra-content .exercise-list {
+  margin-top: 16px;
+}
+
+
+/* -------------------------
+   휴식 타이머
+-------------------------- */
+
+.timer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.timer-header h2 {
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.timer-running {
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  background: #eaf5ee;
+
+  color: #397b57;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.rest-options {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 8px;
+}
+
+.rest-option {
+  min-height: 44px;
+
+  border: 1px solid #e0e3e6;
+  border-radius: 12px;
+
+  background: white;
+
+  color: #555;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.rest-option.active {
+  border-color: #4d8d68;
+
+  background: #eaf5ee;
+
+  color: #32704d;
+}
+
+.timer-display {
+  padding: 28px 0 24px;
+
+  color: #202326;
+
+  font-size: 64px;
+  font-weight: 800;
+
+  line-height: 1;
+
+  text-align: center;
+
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-display.finished {
+  color: #397b57;
+
+  font-size: 38px;
+}
+
+.timer-buttons {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  gap: 10px;
+}
+
+.timer-start-button,
+.timer-pause-button,
+.timer-reset-button {
+  min-height: 52px;
+
+  border-radius: 14px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.timer-start-button {
+  border: none;
+
+  background: #397b57;
+
+  color: white;
+}
+
+.timer-pause-button {
+  border: none;
+
+  background: #222;
+
+  color: white;
+}
+
+.timer-reset-button {
+  border: 1px solid #e0e3e6;
+
+  background: white;
+
+  color: #555;
+}
+
+.timer-guide {
+  margin: 14px 0 0;
+
+  color: #999;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  text-align: center;
+}
+
+/* =========================
+   달력
+========================= */
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.calendar-header h2 {
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.calendar-navigation {
+  display: flex;
+  gap: 8px;
+}
+
+.calendar-navigation button {
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #e0e3e6;
+  border-radius: 12px;
+
+  background: white;
+
+  color: #333;
+
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+.calendar-weekdays {
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  margin-bottom: 8px;
+
+  color: #999;
+
+  font-size: 12px;
+
+  text-align: center;
+}
+
+.calendar-grid {
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 7px;
+}
+
+.calendar-day,
+.calendar-empty {
+  aspect-ratio: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-day {
+  border: 2px solid transparent;
+  border-radius: 12px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* 운동 완료 */
+
+.calendar-day.done {
+  background: #dff2e6;
+
+  color: #267348;
+}
+
+/* 운동 미완료 */
+
+.calendar-day.missed {
+  background: #f9e2e2;
+
+  color: #ad4242;
+}
+
+/* 미래 / 기록 시작 전 */
+
+.calendar-day.future,
+.calendar-day.before {
+  background: #f3f4f5;
+
+  color: #b6b8bb;
+}
+
+/* 오늘 날짜 */
+
+.calendar-day.today {
+  border-color: #222;
+}
+
+/* 설명 */
+
+.calendar-legend {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 18px;
+
+  color: #777;
+
+  font-size: 12px;
+}
+
+.calendar-legend span {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+.legend-dot {
+  display: inline-block;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+}
+
+.legend-dot.done {
+  background: #73b88d;
+}
+
+.legend-dot.missed {
+  background: #df8585;
+}
+
+/* =========================
+   사용자 추가 운동
+========================= */
+
+.exercise-add-form {
+  margin-top: 18px;
+}
+
+.exercise-add-form > label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #777;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.exercise-add-row {
+  display: grid;
+
+  grid-template-columns: 1fr auto;
+
+  gap: 8px;
+}
+
+.exercise-add-row input {
+  min-width: 0;
+  min-height: 48px;
+
+  padding: 0 14px;
+
+  border: 1px solid #dde1e3;
+  border-radius: 13px;
+
+  background: white;
+
+  color: #222;
+
+  font: inherit;
+  font-size: 16px;
+}
+
+.exercise-add-row input:focus {
+  border-color: #4d8d68;
+
+  outline: 3px solid
+    rgba(77, 141, 104, 0.15);
+}
+
+.exercise-add-row button {
+  min-height: 48px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 13px;
+
+  background: #397b57;
+
+  color: white;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.exercise-error {
+  margin: 8px 0 0;
+
+  color: #b65353;
+
+  font-size: 12px;
+}
+
+.extra-empty {
+  margin: 18px 0 0;
+
+  padding: 20px 0;
+
+  color: #999;
+
+  font-size: 13px;
+
+  text-align: center;
+}
+
+.custom-exercise-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+.custom-exercise-row {
+  display: flex;
+
+  align-items: stretch;
+
+  overflow: hidden;
+
+  border: 1px solid #e0e3e6;
+  border-radius: 14px;
+
+  background: white;
+}
+
+.custom-exercise-row.active {
+  border-color: #4d8d68;
+
+  background: #eaf5ee;
+}
+
+.custom-exercise-select {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 58px;
+
+  padding: 10px 14px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #222;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.custom-exercise-select strong {
+  font-size: 15px;
+}
+
+.custom-exercise-select span {
+  margin-top: 4px;
+
+  color: #888;
+
+  font-size: 12px;
+}
+
+.custom-exercise-delete {
+  min-width: 60px;
+
+  padding: 0 12px;
+
+  border: none;
+  border-left: 1px solid #eeeeee;
+
+  background: transparent;
+
+  color: #b65353;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
