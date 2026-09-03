@@ -3,8 +3,8 @@ import "./App.css";
 
 const basicExercises = [
   "풀업",
-  "스쿼트",
   "푸쉬업",
+  "스쿼트",
 ];
 
 const DEFAULT_BASIC_PLANS = {
@@ -760,36 +760,22 @@ function App() {
     );
 
     const willFinishExercise =
-      completedSets + 1 >=
-      currentPlan.sets;
+  completedSets + 1 >=
+  currentPlan.sets;
 
-    /*
-      현재 운동이 아직
-      끝나지 않았다면
-      휴식 타이머 시작
-    */
-    if (
-      !willFinishExercise
-    ) {
-      setCurrentReps(
-        currentPlan.reps
-      );
+/*
+  현재 운동의 다음 세트가 남아 있으면
+  횟수만 기본 목표로 되돌림
 
-      setRemainingTime(
-        restTime
-      );
+  타이머는 자동으로 시작하지 않음
+*/
+if (!willFinishExercise) {
+  setCurrentReps(
+    currentPlan.reps
+  );
 
-      setTimerEndTime(
-        Date.now() +
-          restTime * 1000
-      );
-
-      setIsTimerRunning(
-        true
-      );
-
-      return;
-    }
+  return;
+}
 
     /*
       기본 루틴 자동 이동
