@@ -739,79 +739,82 @@ function App() {
   ========================= */
 
   const completeSet = () => {
-    if (isCompleted) {
-      return;
-    }
+  if (isCompleted) {
+    return;
+  }
 
-    const newRecord = {
-      id: Date.now(),
-
-      exercise:
-        currentExercise,
-
-      reps: currentReps,
-    };
-
-    updateTodayRecords(
-      (prev) => [
-        ...prev,
-        newRecord,
-      ]
-    );
-
-    const willFinishExercise =
-  completedSets + 1 >=
-  currentPlan.sets;
-
-/*
-  현재 운동의 다음 세트가 남아 있으면
-  횟수만 기본 목표로 되돌림
-
-  타이머는 자동으로 시작하지 않음
-*/
-if (!willFinishExercise) {
-  setCurrentReps(
-    currentPlan.reps
-  );
-
-  return;
-}
-
-    /*
-      기본 루틴 자동 이동
-
-      풀업
-      ↓
-      스쿼트
-      ↓
-      푸쉬업
-    */
-    const basicIndex =
-      basicExercises.indexOf(
-        currentExercise
-      );
-
-    if (
-      basicIndex !== -1 &&
-      basicIndex <
-        basicExercises.length -
-          1
-    ) {
-      const nextExercise =
-        basicExercises[
-          basicIndex + 1
-        ];
-
-      setCurrentExercise(
-        nextExercise
-      );
-
-      setCurrentReps(
-        plans[nextExercise]
-          .reps
-      );
-    }
+  const newRecord = {
+    id: Date.now(),
+    exercise: currentExercise,
+    reps: currentReps,
   };
+
+  updateTodayRecords((prev) => [
+    ...prev,
+    newRecord,
+  ]);
+
+  /*
+    기본 루틴이면
+    세트 하나 끝날 때마다
+
+    풀업 → 푸쉬업 → 스쿼트 → 풀업
+
+    순서로 자동 이동
+  */
+  const basicIndex =
+    basicExercises.indexOf(currentExercise);
+
+  if (basicIndex !== -1) {
+    for (
+      let offset = 1;
+      offset <= basicExercises.length;
+      offset++
+    ) {
+      const nextIndex =
+        (basicIndex + offset) %
+        basicExercises.length;
+
+      const nextExercise =
+        basicExercises[nextIndex];
+
+      const completedCount =
+        getCompletedSets(nextExercise);
+
+      /*
+        현재 운동은 방금 1세트를
+        추가했으므로 +1 해서 계산
+      */
+      const completedAfterSet =
+        nextExercise === currentExercise
+          ? completedCount + 1
+          : completedCount;
+
+      const targetSets =
+        plans[nextExercise].sets;
+
+      /*
+        아직 목표 세트를 다 하지 않은
+        다음 운동으로 이동
+      */
+      if (completedAfterSet < targetSets) {
+        setCurrentExercise(nextExercise);
+
+        setCurrentReps(
+          plans[nextExercise].reps
+        );
+
+        return;
+      }
+    }
+  }
+
+  /*
+    추가 운동인 경우에는
+    자동으로 다른 운동으로 넘어가지 않음
+  */
+  setCurrentReps(currentPlan.reps);
+};
 
   /* =========================
      운동 기록 초기화
